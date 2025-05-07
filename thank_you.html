@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+</head>
+<body>
+    <h1>Thank You for Your Order!</h1>
+    <p>Order #{{ order.id }} placed for {{ order.customer.name }}.</p>
+    <a href="{% url 'menu' %}">Back to Menu</a>
+</body>
+</html>
