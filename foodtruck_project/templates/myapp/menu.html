@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+</head>
+<body>
+    <h1>Mil Amores Food Truck Menu</h1>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.name }} ({{ item.meat }}) - ${{ item.price }}
+                <a href="{% url 'add_to_cart' item.id %}">Add to Cart</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cart' %}">View Cart</a>
+</body>
+</html>
